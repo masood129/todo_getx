@@ -1,13 +1,24 @@
 class TodoModel {
   TodoModel({
-    this.id,
     this.title,
     this.description,
-    this.completed,
   });
 
-  final int? id;
   final String? title;
   final String? description;
-  final bool? completed;
+
+  factory TodoModel.fromJson(Map<String, dynamic> json) => TodoModel(
+        title: json['title'],
+        description: json['description'],
+      );
+
+   Map<String, String> toJson() => {
+        'title': title!,
+        'description': description!,
+      };
+
+  static List<TodoModel> listFromJson(List data)=>
+      data.map((e) => TodoModel.fromJson(e)).toList();
+
+
 }

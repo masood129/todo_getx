@@ -11,14 +11,4 @@ class TodoModel {
         title: json['title'],
         description: json['description'],
       );
-
-   Map<String, String> toJson() => {
-        'title': title!,
-        'description': description!,
-      };
-
-  static List<TodoModel> listFromJson(List data)=>
-      data.map((e) => TodoModel.fromJson(e)).toList();
-
-
 }

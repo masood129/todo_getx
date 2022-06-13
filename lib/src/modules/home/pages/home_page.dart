@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
+        onPressed: () {
           // Get.toNamed('/addTodo');
         },
         child: const Icon(Icons.add),
@@ -19,15 +19,18 @@ class HomePage extends StatelessWidget {
         color: Colors.amber,
         height: Get.height,
         width: Get.width,
-        child: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (context, index) {
-            final item = homeController.todoList[index];
-            return ListTile(
-              title: Text(item.title!),
-            );
-          },
-        ),
+        child: (homeController.todoList.isEmpty)
+            ? const Center(
+                child: Text("Empty Todoooo's "),
+              )
+            : ListView.builder(
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return const ListTile(
+                    title: Text("item.title!"),
+                  );
+                },
+              ),
       ),
     );
   }

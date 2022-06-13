@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
         width: Get.width,
         child: (homeController.todoList.isEmpty)
             ? const Center(
-                child: Text("Empty Todoooo's "),
+                child: Text("Empty Todooolo's "),
               )
             : ListView.builder(
                 itemCount: 10,

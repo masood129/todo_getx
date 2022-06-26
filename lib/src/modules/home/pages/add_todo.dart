@@ -9,8 +9,26 @@ class AddTodo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber,
+        child: const Icon(
+          Icons.article_outlined,
+          color: Colors.black,
+        ),
+        onPressed: () {
+          controller.customDialog();
+        },
+      ),
       appBar: AppBar(
-        title: const Text('Todo L!st'),
+        leading: InkWell(
+          onTap: () => Get.back(),
+          child: const Icon(Icons.arrow_back_sharp, color: Colors.black),
+        ),
+        backgroundColor: Colors.amber,
+        title: const Text(
+          'Todo L!st',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Container(
         child: Column(children: <Widget>[
@@ -21,20 +39,12 @@ class AddTodo extends StatelessWidget {
             ),
           ),
           TextField(
+            maxLines: 10,
             controller: controller.description,
             decoration: const InputDecoration(
               hintText: "Text",
             ),
           ),
-          IconButton(
-            icon: const Icon(
-              Icons.add,
-              color: Colors.blue,
-            ),
-            onPressed: () {
-              controller.addTodo();
-            },
-          )
         ]),
       ),
     );

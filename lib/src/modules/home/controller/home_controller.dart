@@ -15,6 +15,56 @@ class HomeController extends GetxController {
     super.onInit();
   }
 
+  void customDialog() => Get.defaultDialog(
+        title: 'AreU Sure ?',
+        content: SizedBox(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const Text('this test will added to your Todo !'),
+              SizedBox(
+                height: Get.height * 0.01,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    onTap: () => Get.back(),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.red.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      height: Get.height * 0.05,
+                      width: Get.width * 0.22,
+                      child: const Center(
+                        child: Text('Cancel'),
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      addTodo();
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.green.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      height: Get.height * 0.05,
+                      width: Get.width * 0.22,
+                      child: const Center(
+                        child: Text('Confirm'),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      );
+
   void addTodo() {
     todoList.add(TodoModel(
       title: title.text,
@@ -25,5 +75,7 @@ class HomeController extends GetxController {
     description.clear();
     update(['todoList']);
     Get.back();
+    Get.snackbar('Successes', 'text Added to  your todo!',
+        snackStyle: SnackStyle.GROUNDED, snackPosition: SnackPosition.BOTTOM);
   }
 }

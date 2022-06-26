@@ -10,7 +10,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: const Text('Sample Todo App'),
+      ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
         onPressed: () {
           Get.toNamed(NameRoute.addTodo);
         },
@@ -27,7 +32,7 @@ class HomePage extends StatelessWidget {
               ? const Center(
                   child: Text("You are free Guy!"),
                 )
-              : ListView.builder(
+              : ListView.separated(
                   itemCount: homeController.todoList.length,
                   itemBuilder: (context, index) {
                     final item = homeController.todoList[index];
@@ -35,7 +40,12 @@ class HomePage extends StatelessWidget {
                       title: Text("${item.title}"),
                     );
                   },
-                ),
+                  separatorBuilder: (context, index) {
+                    return Container(
+                      height: 5,
+                      color: Colors.black,
+                    );
+                  }),
         ),
       ),
     );

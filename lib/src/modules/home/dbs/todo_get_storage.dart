@@ -14,8 +14,7 @@ class TodoGetStorage {
   static const key = 'todo_getx';
 
   save(List<TodoModel> todoList) {
-    final encodedTodoList = jsonEncode(todoList);
-    box.write(key, encodedTodoList);
+    box.write(key, json.encode(todoList));
   }
 
   List<TodoModel> load() {

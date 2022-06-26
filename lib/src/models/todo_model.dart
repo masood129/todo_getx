@@ -11,4 +11,11 @@ class TodoModel {
         title: json['title'],
         description: json['description'],
       );
+
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'description': description,
+    };
+  }
 }

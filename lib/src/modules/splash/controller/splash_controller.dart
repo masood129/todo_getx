@@ -9,8 +9,6 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     todoList = TodoGetStorage().load();
-    print(todoList.length);
-
     Future.delayed(Duration(seconds: 5), () {
       Get.offAllNamed(NameRoute.homePage, arguments: todoList);
     });

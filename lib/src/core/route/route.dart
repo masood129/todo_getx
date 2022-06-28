@@ -13,7 +13,7 @@ class NameRoute {
 class RoutePages {
   static final Pages = [
     GetPage(name: NameRoute.splashPage, page: () => SplashPage()),
-    GetPage(name: NameRoute.homePage, page: () =>  HomePage()),
-    GetPage(name: NameRoute.addTodo, page: () =>  AddTodo()),
+    GetPage(name: NameRoute.homePage, page: () => HomePage()),
+    GetPage(name: NameRoute.addTodo, page: () => AddTodo()),
   ];
 }

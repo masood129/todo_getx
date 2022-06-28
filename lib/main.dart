@@ -9,6 +9,5 @@ void main() async {
     debugShowCheckedModeBanner: false,
     initialRoute: NameRoute.splashPage,
     getPages: RoutePages.Pages,
-
   ));
 }

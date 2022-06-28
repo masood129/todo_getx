@@ -15,7 +15,8 @@ class HomeController extends GetxController {
     super.onInit();
   }
 
-  void customDialog() => Get.defaultDialog(
+  void customDialog() =>
+      Get.defaultDialog(
         title: 'AreU Sure ?',
         content: SizedBox(
           child: Column(
@@ -44,6 +45,7 @@ class HomeController extends GetxController {
                   ),
                   InkWell(
                     onTap: () {
+                      Get.back();
                       addTodo();
                     },
                     child: Container(

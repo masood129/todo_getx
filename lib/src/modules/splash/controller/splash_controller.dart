@@ -9,7 +9,7 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     todoList = TodoGetStorage().load();
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Get.offAllNamed(NameRoute.homePage, arguments: todoList);
     });
     super.onInit();

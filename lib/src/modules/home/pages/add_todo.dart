@@ -21,31 +21,28 @@ class AddTodo extends StatelessWidget {
       ),
       appBar: AppBar(
         leading: InkWell(
-          onTap: () => Get.back(),
+          onTap: Get.back,
           child: const Icon(Icons.arrow_back_sharp, color: Colors.black),
         ),
         backgroundColor: Colors.amber,
+        centerTitle: true,
         title: const Text(
           'Todo L!st',
           style: TextStyle(color: Colors.black),
         ),
       ),
       body: Container(
-        child: Column(children: <Widget>[
-          TextField(
-            controller: controller.title,
-            decoration: const InputDecoration(
-              hintText: "title",
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              controller: controller.title,
+              decoration: const InputDecoration(
+                hintText: "title",
+              ),
             ),
-          ),
-          TextField(
-            maxLines: 10,
-            controller: controller.description,
-            decoration: const InputDecoration(
-              hintText: "Text",
-            ),
-          ),
-        ]),
+          ],
+        ),
       ),
     );
   }

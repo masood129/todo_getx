@@ -47,7 +47,7 @@ class HomeController extends GetxController {
       ),
     );
     print('todoList: $todoList');
-    TodoGetStorage().save(todoList);
+    // TodoGetStorage().save(todoList);
     print('hereree');
     title.clear();
     update(['todoList']);
